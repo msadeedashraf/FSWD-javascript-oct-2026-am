@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Javascript</title>
+</head>
+<body>
+    <h1>Learning Javascript</h1>
+
+    <p id="mymessage">Welcome to Learning Javascript</p>
+    <p id="mydate">No Date</p>
+     <hr>
+    <button onclick="document.getElementById('mymessage').innerHTML = 'Welcome to Learning CSS'"   >Click to change the welcome Message</button>
+
+    <hr>
+    <button onclick="myGreetings()">Click Me</button>
+
+    <hr>
+    <button onclick="changeDate()"  >Date</button>
+
+    <script>
+
+
+
+function myGreetings()
+{
+    document.getElementById('mymessage').innerHTML = 'Welcome to Learning HTML'
+
+}
+
+        
+
+        function changeDate()
+        {
+
+        var today = new Date();
+
+        var day = today.getDate();
+        var month = today.getMonth()+1;
+        var year = today.getFullYear();
+
+       
+        // var formatedDate = day + '/' + month + '/' + year
+        var formatedDate = month + '/'+   day    +'/' + year
+
+            // document.getElementById('mydate').innerHTML = today.toDateString()
+            document.getElementById('mydate').innerHTML = formatedDate
+        }
+    </script>
+   
+
+
+
+
+
+</body>
+</html>
