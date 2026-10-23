@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Color</title>
+    <style>
+.btn-green{
+    background-color: green;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-green:hover{
+background-color: lightgreen;
+}
+
+.btn-red{
+    background-color: red;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-red:hover{
+background-color: rgb(219, 35, 35);
+}
+
+.btn-blue{
+    background-color: blue;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-blue:hover{
+background-color: lightblue;
+}
+
+.btn-yellow{
+    background-color: yellow;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+.btn-yellow:hover{
+background-color: lightyellow;
+}
+    </style>
+</head>
+<body>
+    <h1 id="title">Change the font for the text in the paragraph</h1>
+<br>
+<p id="demo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ea dolorum ab id aspernatur eveniet.</p>
+    
+    <button onclick="document.getElementById('demo').style.fontSize = '35px'">Increase Paragraph Font</button>
+    <button onclick="document.getElementById('demo').style.fontSize = '16px'">Decrease Paragraph Font</button>
+     <br><br>
+<hr>
+<br><br>
+
+    <button onclick="increaseFontSize()"  >Increase h1 Font</button>
+    <button onclick="decreaseFontSize()">Decrease h1 Font</button>
+<br><br>
+<hr>
+<br><br>
+    <button onclick="changeColorGreen()" id="btnGreen" class="btn-green"></button>
+    <button onclick="changeColorRed()" id="btnRed" class="btn-red"></button>
+    <button onclick="changeColorYellow()" id="btnYellow" class="btn-yellow"></button>
+    <button onclick="changeColorBlue()" id="btnBlue" class="btn-blue"></button>
+    
+    
+    <script>
+function increaseFontSize(){
+    document.getElementById('title').style.fontSize = '42px'
+}
+
+function decreaseFontSize(){
+    document.getElementById('title').style.fontSize = '20px'
+}
+
+function changeColorGreen()
+{
+    document.getElementById('title').style.color = 'green'
+}
+
+function changeColorRed()
+{
+    document.getElementById('title').style.color = 'Red'
+}
+
+function changeColorYellow()
+{
+    document.getElementById('title').style.color = 'Yellow'
+}
+
+function changeColorBlue()
+{
+    document.getElementById('title').style.color = 'Blue'
+}
+
+
+    </script>
+</body>
+</html>

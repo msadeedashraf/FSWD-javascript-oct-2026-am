@@ -1,0 +1,46 @@
+.btn-green{
+    background-color: green;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-green:hover{
+background-color: lightgreen;
+}
+
+.btn-red{
+    background-color: red;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-red:hover{
+background-color: rgb(219, 35, 35);
+}
+
+.btn-blue{
+    background-color: blue;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-blue:hover{
+background-color: lightblue;
+}
+
+.btn-yellow{
+    background-color: yellow;
+    width: 70px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+.btn-yellow:hover{
+background-color: lightyellow;
+}
