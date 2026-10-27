@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions Example</title>
+</head>
+<body>
+    <h1>Functions Example</h1>
+    <h3 id="demo"></h3>
+    <p id="greetmsg"></p>
+    <button onclick="greetings('Sadeed')">Greet</button>
+    
+    <script>
+        function greetings(name)
+        {
+            document.getElementById('greetmsg').innerHTML = "My name is " + name; 
+        }
+
+        greetings("Faith")
+
+        function add(num1, num2)
+        {
+            return parseFloat(num1)+ parseFloat(num2)
+        }
+
+        document.getElementById('demo').innerHTML = add(9.1,5.2)
+    </script>
+</body>
+</html>
