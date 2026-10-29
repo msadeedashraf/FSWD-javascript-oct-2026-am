@@ -11,7 +11,7 @@ function makeDeposit() {
      myBalance += amount
      document.getElementById('balance').innerHTML = myBalance   
 
-     addTransaction('Debit',amount)
+     addTransaction('Credit',amount)
 
 
   } else {
@@ -29,7 +29,7 @@ function makeWithdrawal() {
     // alert("You are good to withdraw");
     myBalance -= amount
     document.getElementById('balance').innerHTML = myBalance  
-    addTransaction('Credit', amount) 
+    addTransaction('Debit', amount) 
   } else {
     alert("Enter the valid amount for withdraw");
   }
@@ -50,9 +50,27 @@ const transactionRow = document.createElement('tr')
 
 //https://www.w3schools.com/js/js_string_templates.asp
 //Interpolation ${...}
+
+/*
+// https://www.w3schools.com/react/react_es6_ternary.asp
+ //Syntax: condition ? <expression if true> : <expression if false>
+ //type == 'Credit' ? "Deposit" : "Withdrawal"
+ 
+  if (type == 'Credit')
+  {
+    type = 'Deposit';
+  }
+
+  else
+  {
+    type = 'Withdrawal';
+  }
+*/
+
+
 transactionRow.innerHTML =  `<tr>
-                <td>${myDate}</td>
-                <td>${type}</td>
+                <td>${myDate}</td>                
+                <td>${type == 'Credit' ? "Deposit" : "Withdrawal" }</td>
                 <td>${amount}</td>
                 <td>${myBalance}</td>
             </tr>`
