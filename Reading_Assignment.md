@@ -23,6 +23,8 @@
 ### String Interpolation and Ternary Operator
 [String Interpolation and Ternary Operator](https://www.freecodecamp.org/news/javascript-string-format-how-to-use-string-interpolation-in-js/)
 
+[String Interpolation](https://www.freecodecamp.org/news/template-literals-in-javascript/)
+
 [React ES6 Ternary Operator](https://www.w3schools.com/react/react_es6_ternary.asp)
 
 [JavaScript Ternary Operator – Syntax and Example Use Case](https://www.freecodecamp.org/news/the-ternary-operator-in-javascript/)
