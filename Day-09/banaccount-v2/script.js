@@ -71,7 +71,7 @@ const transactionRow = document.createElement('tr')
 transactionRow.innerHTML =  `<tr>
                 <td>${myDate}</td>                
                 <td>${type == 'Credit' ? "Deposit" : "Withdrawal" }</td>
-                <td>${amount}</td>
+                <td class="${type.toLowerCase()}"  >${amount}</td>
                 <td>${myBalance}</td>
             </tr>`
 transactionList.appendChild(transactionRow)
