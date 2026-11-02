@@ -19,7 +19,9 @@ function toggleTransactionFields()
 {
      let myTransactionType = document.getElementById("transactionType").value;
      
-document.getElementById('amount').placeholder = 
+
+
+     document.getElementById('amount').placeholder = 
    myTransactionType == 'd'
 ?  "Enter the deposit amount"
 : "Enter the withdrawal amount"
