@@ -129,13 +129,13 @@ function handleFileUpload(event)
           {
 
             withdraw(amountNum)
-            addTransaction('Debit', description.trim(), amountNum)
+            addTransaction(type.trim().toLowerCase(), description.trim(), amountNum)
 
           }
           else if (type.trim() == 'Credit')
           {
             deposit(amountNum)
-            addTransaction('Credit', description.trim(), amountNum)
+            addTransaction(type.trim().toLowerCase(), description.trim(), amountNum)
 
           }
 
