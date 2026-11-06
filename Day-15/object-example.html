@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Example</title>
+   <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f9;
+        display: flex;
+        justify-content: center;
+        padding: 40px 15px;
+      }
+
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        width: 100%;
+        max-width: 450px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 20px;
+        background: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background: #1d4ed8;
+      }
+
+      .result {
+        margin-top: 20px;
+        padding: 15px;
+        background: #f1f5f9;
+        border-radius: 8px;
+        display: none;
+      }
+
+      .pass {
+        color: green;
+        font-weight: bold;
+      }
+
+      .fail {
+        color: red;
+        font-weight: bold;
+      }
+
+      .error {
+        color: #b91c1c;
+        margin-top: 12px;
+      }
+    </style> 
+  </head>
+  <body>
+    <div class="container">
+      <h2>Student Grade Calculator</h2>
+
+      <label for="studentName">Student Name</label>
+      <input type="text" id="studentName" placeholder="Enter student name" />
+
+      <label for="assignment">Assignment Marks</label>
+      <input
+        type="number"
+        id="assignment"
+        min="0"
+        max="100"
+        placeholder="0 - 100"
+      />
+
+      <label for="midterm">Midterm Marks</label>
+      <input
+        type="number"
+        id="midterm"
+        min="0"
+        max="100"
+        placeholder="0 - 100"
+      />
+
+      <label for="finalExam">Final Exam Marks</label>
+      <input
+        type="number"
+        id="finalExam"
+        min="0"
+        max="100"
+        placeholder="0 - 100"
+      />
+
+      <button onclick="calculateGrade()">Calculate Grade</button>
+
+      <p id="errorMessage" class="error"></p>
+
+      <div class="result" id="result">
+        <h3>Student Result</h3>
+
+        <p>Name: <span id="displayName"></span></p>
+        <p>Average: <span id="average"></span></p>
+        <p>Status: <span id="status"></span></p>
+      </div>
+    </div>
+
+    <script>
+
+      function calculateGrade()
+      {
+          // alert("Test the calculate grade")
+
+
+             // Step 1: Read input values
+              let name = document.getElementById(
+                  "studentName"
+              ).value.trim();
+
+              let assignmentInput = document.getElementById(
+                  "assignment"
+              ).value;
+
+              let midtermInput = document.getElementById(
+                  "midterm"
+              ).value;
+
+              let finalInput = document.getElementById(
+                  "finalExam"
+              ).value;
+
+              let errorMessage = document.getElementById(
+                  "errorMessage"
+              );
+
+              let result = document.getElementById("result");
+
+              let marks = [assignmentInput, midtermInput, finalInput]
+
+              // Step 2: Validate inputs
+              if (
+
+              name === "" ||
+                        marks.some(
+                            mark => mark.trim() === "" 
+                            || !Number.isFinite(Number(mark)) 
+                            || Number(mark) < 0 
+                            || Number(mark) > 100
+                        )
+
+
+              )
+              {
+                errorMessage.textContent =    "Enter a name and valid marks between 0 and 100.";
+                return;
+              }
+              else
+              {
+                errorMessage.textContent = ""
+              }
+            
+              // Step 3: Create a student object
+
+              const student = {
+
+                id: 101,
+                name:name,
+                course:"Javascript",
+                marks : { 
+                            assignment: Number(assignmentInput),
+                            midterm : Number(midtermInput),
+                            finalExam: Number(finalInput)
+                        },
+                calCulateAverage: function()
+                            {
+                                return (this.marks.assignment + this.marks.midterm + this.marks.finalExam )/3;
+                            },
+                getResult : function ()
+                            {
+                                return this.calCulateAverage() >= 50 
+                                ? "Pass"
+                                : "Fail"
+                            }
+                
+            }
+
+
+            console.log(student)
+
+            // Step 4: Call object methods
+            let average = student.calCulateAverage();
+            let status = student.getResult();
+
+            console.log(average,status,student.name)
+
+
+            // Step 5: Display results
+
+            
+
+            document.getElementById("displayName").innerHTML = student.name;
+            document.getElementById("average").textContent = average.toFixed(2) + '%';
+
+
+            //document.getElementById('status').textContent = status ;
+            let statusElement = document.getElementById('status');
+
+            statusElement.textContent= status ;
+            statusElement.className = 
+                                    status === "Pass" ? "pass" : "fail"
+
+
+
+            document.getElementById('result').style.display = 'block'
+
+          
+
+
+
+
+
+
+
+
+
+
+
+      }
+    </script>
+  </body>
+</html>
