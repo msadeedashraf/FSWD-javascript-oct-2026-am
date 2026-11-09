@@ -4,9 +4,9 @@ const student = {
     name:"Faith",
     course:"Javascript",
     marks : { 
-                assignment: 80,
-                midterm : 75,
-                finalExam: 90
+                assignment: 40,
+                midterm : 50,
+                finalExam: 40
             },
     calCulateAverage: function()
                 {
@@ -20,4 +20,13 @@ const student = {
                 }
     
 }
+
+console.log(student.name)
+console.log(student.marks)
+console.log(student.marks.assignment)
+console.log(student.marks.midterm)
+console.log(student.marks.finalExam)
+console.log(student.calCulateAverage())
+console.log(student.getResult())
+
 
