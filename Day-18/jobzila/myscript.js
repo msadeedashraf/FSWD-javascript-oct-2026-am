@@ -18,86 +18,40 @@ fetch("data/job_listing.json")
 .then ((response) => response.json())
 .then ((data) => {   
 
+    console.log("Getting data from the local json file")
     console.log(data)
+    console.log("received data from local json file ")
+    const jobData = data;
+
+    getJobs(jobData)
 
 })
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function getJobs()
+function getJobs(myJobData)
 {
 
  let myHTML =""
 
-    //Array of Objects
-
-    let jobs = [
-
-    {
-        "title":"Data Scientist",
-        "company":"XYZ Corp.",
-        "location":"San Francisco, CA",
-        "jobdesc":"We are looking for a skilled and experienced Software Developer to join our team. The ideal candidate should have strong programming skills in Java and experience with web development technologies such as HTML, CSS, and JavaScript. Familiarity with databases and version control systems is a plus."
-    
-    },
-    {
-        "title":"Software Developer",
-        "company":"ABC Inc.",
-        "location":"New York, NY",
-        "jobdesc":"We are looking for a skilled and experienced Software Developer to join our team. The ideal candidate should have strong programming skills in Java and experience with web development technologies such as HTML, CSS, and JavaScript. Familiarity with databases and version control systems is a plus."
-    },
-    {
-        "title":"Full Stack Developer",
-        "company":"TecZila",
-        "location":"Mississauga, ON",
-        "jobdesc":"We are looking for a skilled and experienced Software Developer to join our team. The ideal candidate should have strong programming skills in Java and experience with web development technologies such as HTML, CSS, and JavaScript. Familiarity with databases and version control systems is a plus."
-    
-    },
-    {
-        "title":"Full Stack Developer",
-        "company":"TecZila",
-        "location":"Mississauga, ON",
-        "jobdesc":"We are looking for a skilled and experienced Software Developer to join our team. The ideal candidate should have strong programming skills in Java and experience with web development technologies such as HTML, CSS, and JavaScript. Familiarity with databases and version control systems is a plus."
-    
-    },
-    {
-        "title":"Software Developer",
-        "company":"ABC Inc.",
-        "location":"New York, NY",
-        "jobdesc":"We are looking for a skilled and experienced Software Developer to join our team. The ideal candidate should have strong programming skills in Java and experience with web development technologies such as HTML, CSS, and JavaScript. Familiarity with databases and version control systems is a plus."
-    }
-
-    ]
-
-//console.log(jobs.length)
 
 
-for(i=0;i<jobs.length;i++)
+console.log("Recieved jobData inside getJobs " )
+console.log(myJobData)
+
+
+
+for(i=0;i<myJobData.length;i++)
 {
   //  console.log(jobs[i])
     
     //console.log(jobs[i].company)
      myHTML += `<div class="jobs-listing">
-                    <h3>${jobs[i].title}</h3>
-                  <p>${jobs[i].company}</p>
-                  <p>${jobs[i].location}</p>
+                    <h3>${myJobData[i].title}</h3>
+                  <p>${myJobData[i].company}</p>
+                  <p>${myJobData[i].location}</p>
                   <p>
-                    ${jobs[i].jobdesc}
+                    ${myJobData[i].jobdesc}
                   </p>
     
                 </div>`
