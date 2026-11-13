@@ -1,7 +1,7 @@
-
-
-
 const apiKey = "e6371e622ecf5ce41a555eb7a5dd5d94";
+
+
+
       //const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
       //const apiUrl = "https://api.openweathermap.org/data/4.0/onecall/current?";
 
