@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get My Location</title>
+</head>
+<body>
+
+    <h2>My Current Location</h2>
+
+    <button onclick="getLocation()">
+        Get My Location
+    </button>
+
+    <p id="latitude"></p>
+    <p id="longitude"></p>
+    <p id="error"></p>
+
+    <script>
+        function getLocation() {
+
+            if (navigator.geolocation) {
+
+                navigator.geolocation.getCurrentPosition(
+                    showPosition,
+                    showError,
+                    {
+                        enableHighAccuracy: true,
+                        timeout: 10000,
+                        maximumAge: 0
+                    }
+                );
+
+            } else {
+                document.getElementById("error")
+                    .innerText =
+                    "Geolocation is not supported.";
+            }
+        }
+
+        function showPosition(position) {
+
+            let latitude = position.coords.latitude;
+            let longitude = position.coords.longitude;
+
+            console.log("Latitude:", latitude);
+            console.log("Longitude:", longitude);
+
+            document.getElementById("latitude")
+                .innerText = "Latitude: " + latitude;
+
+            document.getElementById("longitude")
+                .innerText = "Longitude: " + longitude;
+        }
+
+        function showError(error) {
+            document.getElementById("error")
+                .innerText = error.message;
+        }
+    </script>
+
+</body>
+</html>

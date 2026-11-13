@@ -31,7 +31,6 @@
 ```  
 ![node](/assets/executing_js_using_node.png)
 
-
 ### For CSS
 
 - [21 Day Challenge](https://courses.kevinpowell.co/conquering-responsive-layouts)
